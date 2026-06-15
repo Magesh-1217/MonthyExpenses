@@ -19,6 +19,11 @@ import React from 'react'
 const Dashboard = React.lazy(() => import('./views/dashboard/Dashboard'))
 const Colors = React.lazy(() => import('./views/theme/colors/Colors'))
 const Typography = React.lazy(() => import('./views/theme/typography/Typography'))
+//=================================================================================================
+const MyExpenses = React.lazy(() => import('./views/sidebarPages/myexpenses'))
+const PeriodsMonitor = React.lazy(() => import('./views/sidebarPages/periodsMonitor'))
+
+//=================================================================================================
 
 // Base
 const Accordion = React.lazy(() => import('./views/base/accordion/Accordion'))
@@ -89,6 +94,8 @@ const Widgets = React.lazy(() => import('./views/widgets/Widgets'))
 export const routes = [
   { path: '/', exact: true, name: 'Home' },
   { path: '/dashboard', name: 'Dashboard', element: Dashboard },
+  { path: '/myexpenses', name: 'My Expenses', element: MyExpenses },
+  { path: '/periods-monitor', name: 'Periods Monitor', element: PeriodsMonitor },
   // { path: '/theme', name: 'Theme', element: Colors, exact: true },
   // { path: '/theme/colors', name: 'Colors', element: Colors },
   // { path: '/theme/typography', name: 'Typography', element: Typography },
