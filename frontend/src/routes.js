@@ -20,7 +20,7 @@ const Dashboard = React.lazy(() => import('./views/dashboard/Dashboard'))
 const Colors = React.lazy(() => import('./views/theme/colors/Colors'))
 const Typography = React.lazy(() => import('./views/theme/typography/Typography'))
 //=================================================================================================
-const MyExpenses = React.lazy(() => import('./views/sidebarPages/myexpenses'))
+const MyExpenses = React.lazy(() => import('./views/sidebarPages/MyExpenses/myexpenses'))
 const PeriodsMonitor = React.lazy(() => import('./views/sidebarPages/periodsMonitor'))
 
 //=================================================================================================
