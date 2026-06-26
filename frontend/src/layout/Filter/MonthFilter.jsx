@@ -1,18 +1,17 @@
+
 import React from 'react'
 import DatePicker from 'react-multi-date-picker'
 import { CiCalendarDate } from 'react-icons/ci'
 
-const MonthFilter = ({ coldstorage, setcoldstorage, activeFilter, setActiveFilter }) => {
+const MonthFilter = ({ value, onChange }) => {
   return (
     <div style={{ position: 'relative', width: '100%' }}>
-      {/* <label htmlFor="month " className='me-2'> Month</label> */}
       <DatePicker
-        id="month"
         onlyMonthPicker
-        format="YYYY/MM"
+        format="MMMM YYYY"
+        value={value}
         maxDate={new Date()}
-        calendarClassName="month-picker-popup"
-        disabled={activeFilter && activeFilter !== 'month'}
+        onChange={onChange}
         render={(value, openCalendar) => (
           <div style={{ position: 'relative', width: '180px' }}>
             <input
@@ -23,7 +22,6 @@ const MonthFilter = ({ coldstorage, setcoldstorage, activeFilter, setActiveFilte
               onClick={openCalendar}
             />
 
-            {/* ✅ REAL ICON */}
             <CiCalendarDate
               onClick={openCalendar}
               style={{
@@ -38,23 +36,6 @@ const MonthFilter = ({ coldstorage, setcoldstorage, activeFilter, setActiveFilte
             />
           </div>
         )}
-        onChange={(date) => {
-          if (!date) return
-
-          const jsDate = date.toDate()
-
-          const startDate = new Date(jsDate.getFullYear(), jsDate.getMonth(), 1)
-          const endDate = new Date(jsDate.getFullYear(), jsDate.getMonth() + 1, 0)
-
-          const formattedStart = date.set({ day: 1 }).format('YYYY-MM-DD')
-          const formattedEnd = date.set({ day: endDate.getDate() }).format('YYYY-MM-DD')
-
-          // setcoldstorage({
-          //   ...coldstorage,
-          //   Fromdate: formattedStart,
-          //   Todate: formattedEnd,
-          // })
-        }}
       />
     </div>
   )

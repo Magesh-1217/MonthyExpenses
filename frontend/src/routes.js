@@ -22,6 +22,7 @@ const Typography = React.lazy(() => import('./views/theme/typography/Typography'
 //=================================================================================================
 const MyExpenses = React.lazy(() => import('./views/sidebarPages/MyExpenses/myexpenses'))
 const PeriodsMonitor = React.lazy(() => import('./views/sidebarPages/periodsMonitor'))
+const MonthChart = React.lazy(() => import('./views/sidebarPages/MyExpenses/MonthChart'))
 
 //=================================================================================================
 
@@ -95,6 +96,7 @@ export const routes = [
   { path: '/', exact: true, name: 'Home' },
   { path: '/dashboard', name: 'Dashboard', element: Dashboard },
   { path: '/myexpenses', name: 'My Expenses', element: MyExpenses },
+  { path: '/month-chart/:month', name: 'Month Chart', element: MonthChart },
   { path: '/periods-monitor', name: 'Periods Monitor', element: PeriodsMonitor },
   // { path: '/theme', name: 'Theme', element: Colors, exact: true },
   // { path: '/theme/colors', name: 'Colors', element: Colors },
