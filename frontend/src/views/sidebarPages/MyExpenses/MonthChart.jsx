@@ -7,7 +7,6 @@ const MonthChart = () => {
 
   return (
     <div>
-      <h3>{month}</h3>
       <MonthchartTemplate />
     </div>
   )
